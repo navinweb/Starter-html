@@ -12,7 +12,7 @@ let css = './app/*.css',
     html = './app/*.html',
     js = './app/js/common.js',
     libs = './app/libs/**/*.js',
-    sassDir = './sass/**/*.sass',
+    sassDir = ['./sass/**/*.sass', './sass/**/*.scss'],
     img = './app/images/*';
 
 gulp.task('browser-sync', ['styles', 'scripts'], function() {
@@ -25,7 +25,7 @@ gulp.task('browser-sync', ['styles', 'scripts'], function() {
 });
 
 gulp.task('styles', function () {
-  return gulp.src('sass/*.sass')
+  return gulp.src('sass/main.scss')
   .pipe(sass({
     includePaths: require('node-bourbon').includePaths
   }).on('error', sass.logError))
@@ -63,7 +63,6 @@ gulp.task('watch', function () {
   gulp.watch(js, ['scripts']);
   gulp.watch(html).on('change', browserSync.reload);
   gulp.watch(img,['compress-images']);
-
 });
 
 gulp.task('default', ['browser-sync', 'watch']);

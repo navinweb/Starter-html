@@ -1,0 +1,237 @@
+// 1 - TOOLS
+@import '1-tools/bourbon/bourbon';
+@import '1-tools/fonts';
+@import '1-tools/normalize';
+@import '1-tools/vars';
+@import '1-tools/grid';
+
+// 2 - BASICS
+@import '2-basics/body-element';
+@import '2-basics/selection-colors';
+@import '2-basics/links';
+@import '2-basics/typography';
+@import '2-basics/buttons';
+
+html, body {
+	height: 100vh;
+}
+
+body {
+	font-size: 16px;
+	min-width: 320px;
+	position: relative;
+	line-height: 1.6;
+	font-family: "Iconic Trial Light", sans-serif;
+	overflow-x: hidden;
+	background-color: #19191f;
+}
+
+.hidden {
+	display: none;
+}
+
+header {
+	z-index: 1;
+}
+
+.header--wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+
+}
+
+.slogan {
+	h1 {
+		font-size: 45.829px;
+		line-height: 108.9%;
+		/* or 50px */
+		letter-spacing: -0.02em;
+		color: #FFFFFF;
+		margin: 0;
+	}
+}
+
+.page {
+	padding: 65px 0 45px;
+	display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+	align-items: center;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.text-container {
+	// position: fixed;
+    // left: 0;
+    // top: calc(50%);
+    width: 100%;
+}
+
+.text-wrap {
+	overflow: hidden;
+	text-transform: uppercase;
+	transform: rotate(2.87deg);
+	background: red;
+	position: relative;
+}
+
+.text {
+	display: flex;
+	// position: absolute;
+	// top: calc(50% - 52px);
+	// left: 0;
+	// width: 1408px;
+	// height: 52px;
+	// left: 20.03px;
+
+	font-size: 54.03px;
+	line-height: 1;
+	/* identical to box height */
+
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: #FFFFFF;
+
+	flex-shrink: 0;
+	margin: 0;
+	padding: 10px 15px 6px;
+	min-width: 100%;
+	white-space: nowrap;
+	animation-name: marqueeLine;
+	animation-duration: 40s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	// animation: arrows 1s infinite;
+	// animation-iteration-count: infinite;
+	font-family: "Iconic Trial Regular", sans-serif;
+}
+
+@keyframes marqueeLine {
+	0% {
+	  transform: translateX(0);
+	}
+
+	100% {
+	  transform: translateX(-256%);
+	}
+  }
+
+
+.social {
+	a {
+		margin: 0 18px;
+
+		&:hover {
+			path {
+				fill-opacity: 1;
+			}
+		}
+	}
+}
+
+#blumps {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+#lines {
+	position: absolute;
+	left: 0;
+	top: -65px;
+	// width: 100%;
+}
+
+#dots {
+	position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-165px);
+	z-index: -1;
+	// width: 100%;
+}
+
+
+footer {
+	position: absolute;
+    bottom: 45px;
+    z-index: 1;
+
+}
+
+
+@media (max-width: 767px) {
+	.slogan {
+		position: absolute;
+		bottom: 180px;
+		left: 50%;
+		transform: translateX(-50%);
+
+		h1 {
+			font-size: 21px;
+		}
+	}
+
+	#blumps {
+		display: none;
+	}
+
+	.page {
+		padding: 155px 0 45px;
+	}
+
+	.text {
+		font-size: 27px;
+	}
+
+	#dots {
+		transform: translateY(-208px);
+		max-width: 500px;
+	}
+
+	#lines {
+		top: -90px;
+		max-width: 510px;
+	}
+
+	.text-container {
+		margin-top: -200px;
+	}
+
+	#lines {
+		width: 100%;
+	}
+
+	#dots {
+		width: 100%;
+	}
+}
+
+
+@media (max-height: 500px) {
+	.text-container {
+		margin-top: -100px;
+	}
+
+	.page {
+		padding: 20px 0;
+	}
+
+	.slogan {
+		bottom: 120px;
+	}
+
+	#lines {
+		width: 100%;
+	}
+
+	#dots {
+		width: 100%;
+	}
+}
